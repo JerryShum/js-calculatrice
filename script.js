@@ -8,6 +8,8 @@ const calcDisplayElement = document.querySelector('.calc-display');
 const calcNumbersButtons = document.querySelector('.calc-num-btns');
 const calcOperationButtons = document.querySelector('.calc-operations-btns');
 
+
+
 // Operation Functions
 function add(a, b) {
     return a + b;

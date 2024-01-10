@@ -30,4 +30,8 @@
     padding: 20px;
 }
 
-.calc-inputs {}
+.calc-btn-inputs {
+    display: grid;
+
+    margin-top: 40px;
+}
