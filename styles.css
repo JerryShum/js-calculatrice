@@ -13,13 +13,12 @@
 
 .container {
     margin: 40px auto;
-    width: 800px;
+    width: 600px;
     background-color: aquamarine;
 }
 
 .calc-container {
     border: 1px solid black;
-
     padding: 20px;
 }
 
