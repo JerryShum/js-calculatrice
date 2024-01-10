@@ -14,20 +14,22 @@
 .container {
     margin: 40px auto;
     width: 600px;
-    background-color: aquamarine;
 }
 
 .calc-container {
+    background-color: rgb(95, 95, 95);
     border: 1px solid black;
+    border-radius: 20px;
     padding: 20px;
 }
 
 .calc-display {
     border: 1px solid black;
+    border-radius: 5px;
     background-color: bisque;
 
     text-align: end;
-    padding: 20px;
+    padding: 40px 20px 40px 20px;
 }
 
 .calc-btn-inputs {
@@ -37,7 +39,29 @@
     margin-top: 40px;
 }
 
-.btn-clear,
+.btn {
+    padding: 20px 10px 20px 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+
+    font-weight: 500;
+}
+
+.btn:hover {
+    background-color: darkgray;
+    transition-duration: 0.3s;
+
+    cursor: pointer;
+}
+
+
+
+.btn-clear {
+    background-color: lightpink;
+    grid-column: span 2;
+}
+
 .btn-delete {
+    background-color: rgb(143, 129, 235);
     grid-column: span 2;
 }
