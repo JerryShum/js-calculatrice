@@ -4,7 +4,8 @@ let secondNum = '';
 let operator = null;
 
 // Selecting / Creating DOM elements
-const calcDisplayElement = document.querySelector('.calc-display');
+const primaryDisplayElement = document.querySelector('.display-primary');
+const secndaryDisplayElement = document.querySelector('.display-secondary');
 const calcBtnElements = document.querySelectorAll('.btn');
 
 calcBtnElements.forEach((btn) => btn.addEventListener('click', updateDisplay));
@@ -19,15 +20,13 @@ function updateDisplay() {
         console.log("clear");
         clear();
     } else if (value == "DELETE") {
-        console.log('delete');
+        deleteValue();
     }
     else if (value == '=') {
         console.log('equals');
     }
     else {
-        console.log('OTHER');
-        operator =
-            calcDisplayElement.textContent += ` ${value} `;
+        appendOperator(value);
     }
 }
 
@@ -43,7 +42,7 @@ function appendNum(value) {
     }
     console.log(firstNum);
     console.log(secondNum);
-    calcDisplayElement.textContent += `${value}`
+    primaryDisplayElement.textContent += `${value}`
 }
 
 function appendOperator(value) {
@@ -54,6 +53,11 @@ function appendOperator(value) {
     }
 
     operator = value;
+    primaryDisplayElement.textContent += ` ${value} `;
+
+}
+
+function solve(value) {
 
 }
 
@@ -62,7 +66,17 @@ function clear() {
     secondNum = '';
     operator = null;
 
-    calcDisplayElement.textContent = '';
+    primaryDisplayElement.textContent = '';
+}
+
+function deleteValue() {
+    // if (/[0-9, . ]/.test(primaryDisplayElement.textContent.slice(0, -1))) {
+    //     primaryDisplayElement.textContent = primaryDisplayElement.textContent.slice(0, -1);
+    //     firstNum == primaryDisplayElement.textContent.slice(0, -1);
+    //     console.log(primaryDisplayElement.textContent.slice(0, -1));
+    //     // console.log(firstNum);
+
+    // }
 }
 
 // Operation Functions
