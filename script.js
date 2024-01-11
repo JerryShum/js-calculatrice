@@ -59,6 +59,7 @@ function appendOperator(value) {
 
 function solve() {
     let result = operate(firstNum, secondNum, operator);
+    console.log(operator);
     console.log(result);
 
     primaryDisplayElement.textContent = `${result}`
@@ -89,40 +90,44 @@ function deleteValue() {
 
 // Operation Functions
 function add(a, b) {
-    let first = parseInt(a, 10);
-    let second = parseInt(b, 10);
-    console.log(first + second);
+    let first = parseInt(a);
+    let second = parseInt(b);
     return first + second;
 };
 
 function subtract(a, b) {
-    let first = Integer.parseInt(a);
-    let second = Integer.parseInt(b);
+    let first = parseInt(a);
+    let second = parseInt(b);
+    console.log(first - second);
     return first - second;
 };
 
 function multiply(a, b) {
-    let first = Integer.parseInt(a);
-    let second = Integer.parseInt(b);
+    let first = parseInt(a);
+    let second = parseInt(b);
+    console.log(first * second);
     return first * second;
 };
 
 function divide(a, b) {
-    let first = Integer.parseInt(a);
-    let second = Integer.parseInt(b);
+    let first = parseInt(a);
+    let second = parseInt(b);
     return first / second;
 };
 
 // Operate Function
 function operate(a, b, operator) {
+    console.log(a);
+    console.log(b);
+    console.log("inside operate" + operator);
     switch (operator) {
         case '+':
             return add(a, b)
-        case '-':
+        case '−':
             return subtract(a, b)
-        case '*':
+        case '×':
             return multiply(a, b)
-        case '/':
+        case '÷':
             return divide(a, b)
     }
 }
