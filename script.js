@@ -5,7 +5,7 @@ let operator = null;
 
 // Selecting / Creating DOM elements
 const primaryDisplayElement = document.querySelector('.display-primary');
-const secndaryDisplayElement = document.querySelector('.display-secondary');
+const secondaryDisplayElement = document.querySelector('.display-secondary');
 const calcBtnElements = document.querySelectorAll('.btn');
 
 calcBtnElements.forEach((btn) => btn.addEventListener('click', buttonPress));
@@ -62,6 +62,7 @@ function solve() {
     console.log(operator);
     console.log(result);
 
+    secondaryDisplayElement.textContent = primaryDisplayElement.textContent + ' =';
     primaryDisplayElement.textContent = `${result}`
     firstNum = result;
     secondNum = '';
@@ -76,6 +77,7 @@ function clear() {
     operator = null;
 
     primaryDisplayElement.textContent = '';
+    secondaryDisplayElement.textContent = '';
 }
 
 function deleteValue() {
