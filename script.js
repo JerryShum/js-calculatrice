@@ -8,9 +8,9 @@ const primaryDisplayElement = document.querySelector('.display-primary');
 const secndaryDisplayElement = document.querySelector('.display-secondary');
 const calcBtnElements = document.querySelectorAll('.btn');
 
-calcBtnElements.forEach((btn) => btn.addEventListener('click', updateDisplay));
+calcBtnElements.forEach((btn) => btn.addEventListener('click', buttonPress));
 
-function updateDisplay() {
+function buttonPress() {
     let value = this.value;
 
     if (/[0-9, . ]/.test(value)) {
@@ -23,7 +23,7 @@ function updateDisplay() {
         deleteValue();
     }
     else if (value == '=') {
-        console.log('equals');
+        solve();
     }
     else {
         appendOperator(value);
@@ -57,7 +57,15 @@ function appendOperator(value) {
 
 }
 
-function solve(value) {
+function solve() {
+    let result = operate(firstNum, secondNum, operator);
+    console.log(result);
+
+    primaryDisplayElement.textContent = `${result}`
+    firstNum = result;
+    secondNum = '';
+    operator = null;
+
 
 }
 
@@ -81,19 +89,28 @@ function deleteValue() {
 
 // Operation Functions
 function add(a, b) {
-    return a + b;
+    let first = parseInt(a, 10);
+    let second = parseInt(b, 10);
+    console.log(first + second);
+    return first + second;
 };
 
 function subtract(a, b) {
-    return a - b;
+    let first = Integer.parseInt(a);
+    let second = Integer.parseInt(b);
+    return first - second;
 };
 
 function multiply(a, b) {
-    return a * b;
+    let first = Integer.parseInt(a);
+    let second = Integer.parseInt(b);
+    return first * second;
 };
 
 function divide(a, b) {
-    return a / b;
+    let first = Integer.parseInt(a);
+    let second = Integer.parseInt(b);
+    return first / second;
 };
 
 // Operate Function
