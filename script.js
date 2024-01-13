@@ -34,13 +34,16 @@ function buttonPress() {
 
 function appendNum(value) {
 
-    if (value === '.' && firstNum.includes('.')) {
-        return;
-    }
 
     if (operator == null) {
+        if (value === '.' && firstNum.includes('.')) {
+            return;
+        }
         firstNum += value;
     } else if (operator != null) {
+        if (value === '.' && secondNum.includes('.')) {
+            return;
+        }
         secondNum += value;
     }
     console.log(firstNum);
@@ -64,13 +67,18 @@ function appendOperator(value) {
 }
 
 function solve() {
-    let result = operate(firstNum, secondNum, operator);
+
+    if (operator == null) {
+        return;
+    }
+
+    let result = parseFloat(operate(firstNum, secondNum, operator).toFixed(8));
     console.log(operator);
     console.log(result);
 
     secondaryDisplayElement.textContent = primaryDisplayElement.textContent + ' =';
     primaryDisplayElement.textContent = `${result}`
-    firstNum = result;
+    firstNum = result.toString();
     secondNum = '';
     operator = null;
 
@@ -124,29 +132,29 @@ function deleteValue() {
 
 // Operation Functions
 function add(a, b) {
-    let first = parseInt(a);
-    let second = parseInt(b);
+    let first = parseFloat(a);
+    let second = parseFloat(b);
 
     return first + second;
 };
 
 function subtract(a, b) {
-    let first = parseInt(a);
-    let second = parseInt(b);
+    let first = parseFloat(a);
+    let second = parseFloat(b);
     console.log(first - second);
     return first - second;
 };
 
 function multiply(a, b) {
-    let first = parseInt(a);
-    let second = parseInt(b);
+    let first = parseFloat(a);
+    let second = parseFloat(b);
     console.log(first * second);
     return first * second;
 };
 
 function divide(a, b) {
-    let first = parseInt(a);
-    let second = parseInt(b);
+    let first = parseFloat(a);
+    let second = parseFloat(b);
 
     if (second == 0) {
         return undefined;
