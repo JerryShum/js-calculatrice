@@ -17,9 +17,11 @@ function buttonPress() {
         appendNum(value);
 
     } else if (value == "CLEAR") {
-        console.log("clear");
+        console.log("CLEAR");
         clear();
     } else if (value == "DELETE") {
+        console.log("DELETE");
+
         deleteValue();
     }
     else if (value == '=') {
@@ -31,6 +33,7 @@ function buttonPress() {
 }
 
 function appendNum(value) {
+
     if (value === '.' && firstNum.includes('.')) {
         return;
     }
@@ -42,6 +45,9 @@ function appendNum(value) {
     }
     console.log(firstNum);
     console.log(secondNum);
+
+
+
     primaryDisplayElement.textContent += `${value}`
 }
 
@@ -81,14 +87,40 @@ function clear() {
 }
 
 function deleteValue() {
-    // if (/[0-9, . ]/.test(primaryDisplayElement.textContent.slice(0, -1))) {
-    //     primaryDisplayElement.textContent = primaryDisplayElement.textContent.slice(0, -1);
-    //     firstNum == primaryDisplayElement.textContent.slice(0, -1);
-    //     console.log(primaryDisplayElement.textContent.slice(0, -1));
-    //     // console.log(firstNum);
+    let newString = '';
+    let deletedChar = '';
 
-    // }
+    console.log("OG TEXT:" + primaryDisplayElement.textContent);
+
+    // Returns the last character
+    deletedChar = primaryDisplayElement.textContent.slice(-1);
+
+    if (deletedChar === ' ') {
+        // Deletes the last 3 chars
+        operator = null;
+        secondNum = '';
+        newString = primaryDisplayElement.textContent.slice(0, -3);
+    } else {
+        // Returns from 0 to everything before the last char
+        newString = primaryDisplayElement.textContent.slice(0, -1);
+
+        if (operator == null) {
+            firstNum = firstNum.slice(0, -1);
+        } else if (operator != null) {
+            secondNum = secondNum.slice(0, -1);
+        }
+    }
+
+    console.log("firstNUm: " + firstNum);
+    console.log("SecondNum: " + secondNum);
+
+
+    primaryDisplayElement.textContent = newString;
+
+
+
 }
+
 
 // Operation Functions
 function add(a, b) {
