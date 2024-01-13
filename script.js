@@ -126,6 +126,7 @@ function deleteValue() {
 function add(a, b) {
     let first = parseInt(a);
     let second = parseInt(b);
+
     return first + second;
 };
 
@@ -146,6 +147,10 @@ function multiply(a, b) {
 function divide(a, b) {
     let first = parseInt(a);
     let second = parseInt(b);
+
+    if (second == 0) {
+        return undefined;
+    }
     return first / second;
 };
 
