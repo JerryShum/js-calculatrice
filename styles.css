@@ -27,6 +27,21 @@ body {
     text-align: center;
 }
 
+.footer-link {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    text-decoration: none;
+
+    color: #24292f;
+}
+
+.logo {
+    margin-left: 10px;
+    height: 30px;
+    width: 30px;
+}
+
 .container {
     margin: 40px auto;
     width: 400px;
@@ -83,8 +98,6 @@ body {
 
     cursor: pointer;
 }
-
-
 
 .btn-clear {
     background-color: lightpink;
