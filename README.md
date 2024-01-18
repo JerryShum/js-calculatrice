@@ -10,6 +10,6 @@ Here are some features of the calculator:
 - Fully functional CLEAR and DELETE buttons allowing for calculation clearing/editing
 - Secondary "display" to display previous calculations while primary display is used to display answers
 
-## You can acess the calculator here:
+**You can acess the calculator here:**
 
 [https://jerryshum.github.io/js-calculatrice/](https://jerryshum.github.io/js-calculatrice/)
